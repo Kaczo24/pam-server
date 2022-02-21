@@ -1,9 +1,11 @@
 Windows 10 Home 21H1 19043.1526 64-bitowy
+
 Intel(R) Core(TM) i5-8600K CPU @ 3.60GHz
+
 16 GB RAM
 
 Node.js v14.16.1
-Modules:
+### Modules:
     bcrypt - ^5.0.1
     body-parser - ^1.19.0
     cookie-paser - ^1.4.5
@@ -14,22 +16,22 @@ Modules:
     nodemon - ^2.0.13
     path - ^0.12.7
 
-.env file:
-PORT - server port
-PATH - server hosting address
-TOKEN_SECRET - 512 bit random number in hex
+### .env file:
+    PORT - server port
+    PATH - server hosting address
+    TOKEN_SECRET - 512 bit random number in hex
 
-Database - JSON file:
-{
-    users - Array: [
-        {
-            username - TEXT,
-            password - TEXT
-        }
-    ] 
-}
+### Database - JSON file:
+    {
+        users - Array: [
+            {
+                username - TEXT,
+                password - TEXT
+            }
+        ] 
+    }
 
-Endpoints:
+### Endpoints:
     /api
         /account
             /login
