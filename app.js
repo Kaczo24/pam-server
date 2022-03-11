@@ -20,6 +20,6 @@ app.use(function(req, res, next) {
 });
 
 app.use('/api', mainRouter)
-app.use((req, res, next) => res.status(404).send(`<html><body><h2>Endpoint does not exist</h2></body></html>`))
+app.use((req, res, next) => res.status(200).send(`<html><body><h2>Endpoint does not exist</h2></body></html>`))
 
 module.exports = app;
