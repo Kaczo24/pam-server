@@ -21,6 +21,11 @@ Node.js v14.16.1
     PATH - server hosting address
     TOKEN_SECRET - 512 bit random number in hex
 
+### ssl generation:
+    cd ssl 
+    openssl req -new -newkey rsa:4096 -days 3650 -nodes -x509 -keyout server.key -out server.crt
+    cd ..
+
 ### Database - JSON file:
     {
         users - Array: [
