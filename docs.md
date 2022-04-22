@@ -19,6 +19,8 @@ Node.js v14.16.1
 ### .env file:
     PORT - server port
     PATH - server hosting address
+    PORT_U= unsecure server port
+    PATH_U= unsecure server hosting address
     TOKEN_SECRET - 512 bit random number in hex
 
 ### ssl generation:
@@ -43,3 +45,5 @@ Node.js v14.16.1
                 POST {username: TEXT (the username), password: TEXT (password)}; response codes: 401(Unauthorized), 200(OK); response body: JSON {error: TEXT (error content), success: TEXT (jsonwebtoken)}
             /register
                 POST {username: TEXT (the username), password: TEXT (password)}; response codes: 401(Conflict), 200(OK); response body: JSON {error: TEXT (error content), success: TEXT (confirmation)}
+            /verifyLogin
+                POST {authorization: TEXT (token)};  response body: TEXT ("no token" | "invalid token" | "success")
