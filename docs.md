@@ -41,9 +41,36 @@ Node.js v14.16.1
 ### Endpoints:
     /api
         /account
-            /login
-                POST {username: TEXT (the username), password: TEXT (password)}; response codes: 401(Unauthorized), 200(OK); response body: JSON {error: TEXT (error content), success: TEXT (jsonwebtoken)}
-            /register
-                POST {username: TEXT (the username), password: TEXT (password)}; response codes: 401(Conflict), 200(OK); response body: JSON {error: TEXT (error content), success: TEXT (confirmation)}
-            /verifyLogin
-                POST {authorization: TEXT (token)};  response body: TEXT ("no token" | "invalid token" | "success")
+            /login POST 
+                request body: {username: "username", password: "qwerty"}
+                response codes: 401(Unauthorized), 200(OK)
+                response body: JSON {error: TEXT (error content), success: TEXT (jsonwebtoken)}
+            /register POST
+                request body: {username: TEXT (the username), password: TEXT (password)}
+                response codes: 401(Conflict), 200(OK)
+                response body: JSON {error: TEXT (error content), success: TEXT (confirmation)}
+            /verifyLogin POST
+                request body: {authorization: "67856586568678547547547657865"}
+                response codes: 200(OK)
+                response body: TEXT ("no token" | "invalid token" | "success")
+
+
+# Examples
+## login: 
+
+{<br>
+    "username": "username",<br>
+    "password": "qwerty"<br>
+}
+
+## register
+
+{<br>
+    "username": "username",<br>
+    "password": "qwerty"<br>
+}
+
+## verifyLogin
+{<br>
+    authorizatio: "67856586568678542897393286298657547547657865"<br>
+}
