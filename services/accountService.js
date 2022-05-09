@@ -5,6 +5,7 @@ const {find, save} = require("../models/accountModel");
 
 exports.login = async (req, res, next) => {
     console.log(req.body);
+    if(!req.body.username || !req.body.password) return res.status(400).json({"error": "Missing credentials"})
     let result = find({username: req.body.username});
     if(result.length !== 1) 
         return res.status(401).json({"error": "Wrong username!"})
@@ -23,6 +24,7 @@ exports.login = async (req, res, next) => {
 }
 
 exports.register = async (req, res, next) => {
+    if(!req.body.username || !req.body.password) return res.status(400).json({"error": "Missing credentials"})
     console.log(req.body);
     let result = find({username: req.body.username});
      if(result.length > 0) 
